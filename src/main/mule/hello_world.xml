@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="Dem_testing" doc:name="HTTP Listener config" doc:id="5a1ebec2-92ca-49a9-98fa-24a4efdc343e" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hello_worldFlow" doc:id="c8648cd4-5978-4856-bcfd-5b734e4b20f0" >
+		<http:listener doc:name="Listener" doc:id="03299ddb-1104-40ca-9d2d-2e69b8bce23b" config-ref="Dem_testing" path="/hello_world"/>
+		<set-payload value='"MuleSoft is a vendor that provides an integration platform to help businesses connect data, applications and devices across on-premises and cloud computing environments."' doc:name="Set Payload" doc:id="813351da-21de-429f-b70e-2f1452721aa2" />
+	</flow>
+</mule>
